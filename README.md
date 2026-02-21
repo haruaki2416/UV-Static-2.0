@@ -7,7 +7,7 @@ UV-Static... But WISP and Tabbed!
 
 This is a succesor to [UV-Static](https://github.com/rhenryw/UV-Static)
 
-This uses WISP technology
+This uses WISP technology 
 
 How to use:
 ---
