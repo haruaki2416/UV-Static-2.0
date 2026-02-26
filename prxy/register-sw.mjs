@@ -1,4 +1,5 @@
 "use strict";
+
 /**
  * Distributed with Ultraviolet and compatible with most configurations.
  */
@@ -18,11 +19,17 @@ export async function registerSW() {
     if (
       location.protocol !== "https:" &&
       !swAllowedHostnames.includes(location.hostname)
-    )
+    ) {
       throw new Error("Service workers cannot be registered without https.");
+    }
 
     throw new Error("Your browser doesn't support service workers.");
   }
 
-  await navigator.serviceWorker.register(stockSW);
+  await navigator.serviceWorker.register(stockSW, {
+    scope: "/"
+  });
 }
+
+// ⭐ REQUIRED: actually run the registration
+registerSW();
